@@ -1,0 +1,20 @@
+extends layout.pug
+
+block content
+    div.container.h-100
+        div.row.h-100.align-items-center
+            div.col-md-6.offset-md-3
+                div.card
+                    div.card-body
+
+                        h3.text-center.mb-4 #{ weather.data.name } #{ weather.data.sys.country }
+                        div.row
+                            div.col-md-6
+                                p Temperatura: #{ weather.data.main.temp } &#186C
+                                p Cisnienie: #{ weather.data.main.pressure } hPa
+                            div.col-md-6
+                                p Wiatr #{ weather.data.wind.speed } km/h
+                                p Zachmurzenie #{ weather.data.clouds.all }%
+                        div.text-center
+                            a(href="/"): button.btn.btn-primary(type="button") Powrot
+

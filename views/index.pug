@@ -1,0 +1,22 @@
+extends layout.pug
+
+block content
+    div.container.h-100
+        div.row.h-100.align-items-center
+            div.col-md-6.offset-md-3
+                div.card
+                    div.card-body
+
+                        h3.text-center Weather app
+
+                        form(method="GET", action="/")
+                            div.form-group
+                                label Miasto
+                                input.form-control(id="city", type="text", name="city")
+                            div.text-center
+                                button.btn.btn-primary(type="submit") Znajdz pogode
+
+                        p Last searches
+                        ul.list-group
+                            each val in cities
+                                li.list-group-item= val
